@@ -1,1 +1,1 @@
-# Aplikationsudvikling - Min Strøm
+# Applikationsudvikling - Min Strøm
