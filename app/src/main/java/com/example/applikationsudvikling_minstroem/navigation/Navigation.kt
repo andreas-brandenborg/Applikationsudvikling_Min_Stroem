@@ -20,4 +20,4 @@ fun Navigation(){
     })
 }
 
-// Funky banana push comment.
+// Funky banana push comment. Nu stopper du!
