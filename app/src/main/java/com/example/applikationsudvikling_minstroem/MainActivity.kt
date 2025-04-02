@@ -11,6 +11,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.applikationsudvikling_minstroem.navigation.Navigation
+import com.example.applikationsudvikling_minstroem.navigation.Routes
+import com.example.applikationsudvikling_minstroem.ui.screens.Main_screen
 import com.example.applikationsudvikling_minstroem.ui.theme.ApplikationsudviklingMinStroemTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,30 +24,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ApplikationsudviklingMinStroemTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            Navigation()
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ApplikationsudviklingMinStroemTheme {
-        Greeting("Android")
     }
 }
