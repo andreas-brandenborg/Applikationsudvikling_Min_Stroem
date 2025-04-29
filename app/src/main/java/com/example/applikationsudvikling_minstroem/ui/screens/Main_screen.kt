@@ -37,17 +37,14 @@ import com.example.applikationsudvikling_minstroem.navigation.Routes
 
 @Composable
 fun Main_screen(navController: NavController) {
+    MiddleScreen()
+    Devices()
     Button(onClick = {
         navController.navigate(Routes.screen_b)
     }) {
         Text(text = "Next Screen")
     }
 }
-
-
-
-
-
 
 @Composable
 fun MiddleScreen () {
