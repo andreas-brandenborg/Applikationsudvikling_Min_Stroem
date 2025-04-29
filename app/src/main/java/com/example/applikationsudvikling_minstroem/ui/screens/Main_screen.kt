@@ -37,6 +37,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.applikationsudvikling_minstroem.R
@@ -47,7 +50,7 @@ val currentDate = "29/04/2025"
 
 @Composable
 fun Main_screen(navController: NavController) {
-  Column(
+    Column(
         modifier = Modifier
             .padding(24.dp)
             .padding(top = 15.dp)
@@ -65,6 +68,7 @@ fun Main_screen(navController: NavController) {
         navController.navigate(Routes.screen_b)
     }) {
         Text(text = "Next Screen")
+    }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xffffffff)
