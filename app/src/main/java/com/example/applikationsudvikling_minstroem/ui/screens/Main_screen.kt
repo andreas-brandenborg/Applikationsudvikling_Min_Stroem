@@ -70,7 +70,7 @@ fun GraphSection(days: List<String>) {
             }
         }
         Column {
-            Text("Elpriser $")
+            Text("Elpriser $currentDate")
             Image(
                 painter = painterResource(id = R.drawable.graph),
                 contentDescription = "Graph of electricity prices",
