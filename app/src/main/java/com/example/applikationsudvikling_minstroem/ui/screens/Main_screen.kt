@@ -2,7 +2,6 @@ package com.example.applikationsudvikling_minstroem.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -27,10 +26,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -39,6 +42,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -50,21 +54,43 @@ val currentDate = "29/04/2025"
 
 @Composable
 fun Main_screen(navController: NavController) {
-    Column(
-        modifier = Modifier
-            .padding(24.dp)
-            .padding(top = 15.dp)
-    ) {
-        GraphSection(dates)
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(Color(0xFFF3F2F8))) {
+        Column(
+            modifier = Modifier
+                .padding(24.dp)
+                .padding(top = 15.dp)
+                .padding(bottom = 80.dp)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceBetween,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            GraphSection(dates)
+            MiddleScreen()
+            Devices()
+        }
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.Blue)
+                .align(Alignment.BottomCenter),
+        ) {
+            Image(
+                painter = painterResource(R.drawable.navbar),
+                contentDescription = "Navbar",
+                modifier = Modifier
+                    .fillMaxWidth(),
+                contentScale = ContentScale.FillWidth
+            )
+        }
     }
-    MiddleScreen()
-    Devices()
 }
 
 @Preview(showBackground = true, backgroundColor = 0xffffffff)
 @Composable
 fun GraphPreview() {
-    GraphSection(dates)
+    Devices()
 }
 
 @Composable
@@ -97,10 +123,7 @@ fun GraphSection(days: List<String>) {
 
 @Composable
 fun MiddleScreen () {
-    Column (modifier = Modifier
-        .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally) {
+    Column (horizontalAlignment = Alignment.CenterHorizontally) {
         Button(
             onClick = {},
             modifier = Modifier
@@ -125,10 +148,7 @@ fun MiddleScreen () {
             )
         }
 
-
-
         Spacer(modifier = Modifier.height(16.dp))
-
 
         Button(
             onClick = {},
@@ -155,38 +175,26 @@ fun MiddleScreen () {
     }
 }
 
-
-
-
-
-
 var apparater = listOf("Vaskemaskine", "Tørretumbler", "Ovn", "El-cykel", "Opvaskemaskine", "Add")
-
-
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun Devices () {
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text("Planlæg apparater")
-
-        FlowRow(maxItemsInEachRow = 3) {
+    Column {
+        Text("Planlæg apparater", fontSize = 36.sp)
+        FlowRow(
+            maxItemsInEachRow = 3,
+            horizontalArrangement = Arrangement.Center) {
             for (apparat in apparater) {
                 Column {
-                    Text(apparat)
+                    Text(apparat, textAlign = TextAlign.Center)
 
                     Button(
                         modifier = Modifier
-
                             .height(100.dp)
-                            .padding(end = 10.dp),
+                            .padding(5.dp),
                         onClick = {},
-                        colors = ButtonDefaults.buttonColors(containerColor = Color.Gray),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFBABABA)),
                         shape = RoundedCornerShape(20.dp)
                     ) {
                         Image(
@@ -195,13 +203,8 @@ fun Devices () {
                             modifier = Modifier.size(60.dp)
                         )
                     }
-
                 }
-
             }
-
         }
-
-
     }
 }
