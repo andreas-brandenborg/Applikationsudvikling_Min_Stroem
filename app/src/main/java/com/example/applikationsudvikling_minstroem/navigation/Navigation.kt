@@ -10,7 +10,7 @@ import com.example.applikationsudvikling_minstroem.ui.screens.Screen_B
 @Composable
 fun Navigation(){
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Routes.mainScreen, builder = {
+    NavHost(navController = navController, startDestination = Routes.screen_b, builder = {
         composable(Routes.mainScreen){
             Main_screen(navController)
         }
