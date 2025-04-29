@@ -56,19 +56,9 @@ fun Main_screen(navController: NavController) {
             .padding(top = 15.dp)
     ) {
         GraphSection(dates)
-        Button(onClick = {
-            navController.navigate(Routes.screen_b)
-        }) {
-            Text(text = "Next Screen")
-        }
     }
     MiddleScreen()
     Devices()
-    Button(onClick = {
-        navController.navigate(Routes.screen_b)
-    }) {
-        Text(text = "Next Screen")
-    }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xffffffff)
