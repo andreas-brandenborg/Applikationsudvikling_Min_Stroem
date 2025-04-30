@@ -5,7 +5,7 @@ import android.icu.lang.UScript.ScriptUsage
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.applikationsudvikling_minstroem.data.models.Device
-import com.example.applikationsudvikling_minstroem.data.models.deviceList
+import com.example.applikationsudvikling_minstroem.data.repository.deviceList
 import com.example.applikationsudvikling_minstroem.network.RetrofitInstance
 import kotlinx.coroutines.runBlocking
 
