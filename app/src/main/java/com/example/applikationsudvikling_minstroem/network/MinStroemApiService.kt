@@ -24,5 +24,5 @@ interface MinStroemApiService {
     @GET("prices/DK2")
     suspend fun getPrices(
         @Header("Authorization") token: String // Pass the token as a parameter
-    ): Price
+    ): List<Price>
 }
