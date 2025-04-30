@@ -32,6 +32,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Alignment
@@ -127,7 +128,7 @@ fun MiddleScreen () {
         Button(
             onClick = {},
             modifier = Modifier
-                .height(60.dp)
+                .height(70.dp)
                 .width(350.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFFDAEBFF),
@@ -135,17 +136,26 @@ fun MiddleScreen () {
             ),
             shape = RoundedCornerShape(20.dp)
         ) {
-            Text(
-                buildAnnotatedString {
-                    withStyle(style = SpanStyle(color = Color.Black)) {
-                        append("Gns. besparelse for idag ")
-                    }
-                    withStyle(style = SpanStyle(color = Color(0xFF4CAF50))) {
-                        append("12,6kr.")
-                    }
-                },
-                fontSize = 20.sp
-            )
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                Text("Gns. besparelse for i dag",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.W600,
+                    color = Color.Black,
+                    modifier = Modifier
+                        .height(100.dp)
+                        .wrapContentHeight(align = Alignment.CenterVertically)
+                )
+                Text("12,6 kr",
+                    fontSize = 30.sp,
+                    color = Color(0xFF529D3B),
+                    modifier = Modifier
+                        .height(100.dp)
+                        .wrapContentHeight(align = Alignment.CenterVertically))
+            }
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -153,24 +163,33 @@ fun MiddleScreen () {
         Button(
             onClick = {},
             modifier = Modifier
-                .height(60.dp)
+                .height(70.dp)
                 .width(350.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFFDAEBFF)
             ),
             shape = RoundedCornerShape(20.dp)
         ) {
-            Text(
-                buildAnnotatedString {
-                    withStyle(style = SpanStyle(color = Color.Black)) {
-                        append("Din totale besparelse ")
-                    }
-                    withStyle(style = SpanStyle(color = Color(0xFF4CAF50))) {
-                        append("0 Kr.")
-                    }
-                },
-                fontSize = 20.sp
-            )
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                Text("Din totale besparelse",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.W600,
+                    color = Color.Black,
+                    modifier = Modifier
+                        .height(100.dp)
+                        .wrapContentHeight(align = Alignment.CenterVertically)
+                )
+                Text("0 kr",
+                    fontSize = 30.sp,
+                    color = Color(0xFF529D3B),
+                    modifier = Modifier
+                        .height(100.dp)
+                        .wrapContentHeight(align = Alignment.CenterVertically))
+            }
         }
     }
 }
