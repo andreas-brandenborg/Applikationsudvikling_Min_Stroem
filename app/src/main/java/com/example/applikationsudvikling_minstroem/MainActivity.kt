@@ -16,7 +16,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.applikationsudvikling_minstroem.navigation.Navigation
 import com.example.applikationsudvikling_minstroem.navigation.Routes
+import com.example.applikationsudvikling_minstroem.ui.screens.Devices
 import com.example.applikationsudvikling_minstroem.ui.screens.Main_screen
+import com.example.applikationsudvikling_minstroem.ui.screens.MiddleScreen
 import com.example.applikationsudvikling_minstroem.ui.theme.ApplikationsudviklingMinStroemTheme
 
 class MainActivity : ComponentActivity() {
