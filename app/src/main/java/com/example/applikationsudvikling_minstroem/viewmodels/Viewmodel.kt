@@ -10,7 +10,6 @@ import com.example.applikationsudvikling_minstroem.network.RetrofitInstance
 import kotlinx.coroutines.runBlocking
 
 class Viewmodel: ViewModel() {
-
     fun addNewDevice(id: Int, name: String, powerUsage: Int) {
         val newDevice = Device(id, name, powerUsage)
         deviceList.add(newDevice)
