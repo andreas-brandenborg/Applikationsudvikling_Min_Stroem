@@ -57,4 +57,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     val nav_version = "2.8.9"
     implementation("androidx.navigation:navigation-compose:$nav_version")
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+// Retrofit with Scalar Converter
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    // Retrofit with Gson Converter
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 }
